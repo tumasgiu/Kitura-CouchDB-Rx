@@ -27,6 +27,7 @@ extension Reactive where Base: Database {
                     observer.onError(error!)
                 } else {
                     observer.onNext(rev!, document!)
+                    observer.onCompleted()
                 }
             }
             return Disposables.create()
